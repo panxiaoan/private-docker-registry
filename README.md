@@ -6,14 +6,21 @@
 
 ## 使用方法
 
-### Step.1 创建验证文件
+### Step.1 下载镜像
+
+```shell
+docker pull registry:2.6.2
+docker pull hyper/docker-registry-web
+```
+
+### Step.2 创建验证文件
 
 ```
 cd ../private-docker-registry
 ./generate-keys.sh
 ```
 
-### Step.2 创建、下载、运行容器
+### Step.3 创建、下载、运行容器
 
 ```
 cd ../private-docker-registry
