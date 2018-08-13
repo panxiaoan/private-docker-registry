@@ -40,7 +40,8 @@ docker-compose up -d
 ```
 
 **使用**
-- http://localhost:5001
+- Docker Registry: localhost:5000
+- Docker Registry Web UI: http://localhost:5001
 - 默认账号密码：admin / admin
 - 登录后，请给 admin 添加 **write-all**
 
