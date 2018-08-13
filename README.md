@@ -1,5 +1,9 @@
 # 搭建 私有 Docker 仓库
 
+## 介绍
+- Docker Registry：是 Docker 官方提供的镜像仓库服务，开源免费，用于搭建私有仓库服务，在内部分发镜像
+- Docker Registry Web：能够通过浏览器可视化的查看镜像仓库中的：镜像、TAG、事件、删除镜像等
+
 ## 参考
 - https://docs.docker.com/registry/deploying/#run-the-registry-as-a-service
 - https://github.com/mkuchin/docker-registry-web

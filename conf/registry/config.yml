@@ -20,4 +20,4 @@ notifications:
       url: http://192.168.246.146:5001/api/notification
       timeout: 5s
       threshold: 3
-      backoff: 2ss
+      backoff: 2s
