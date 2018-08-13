@@ -1,0 +1,27 @@
+version: '2'
+services:
+  registry-web:
+    image: hyper/docker-registry-web:latest
+    ports:
+      - 5001:8080
+    volumes:
+       - ./conf/registry-web:/conf:ro
+       - ./db:/usr/local/docker/registry-data
+    networks:
+      - registry-net
+    depends_on:
+       - registry
+    restart: always
+  registry:
+    image: registry:2.6.2
+    ports:
+      - 5000:5000
+    volumes:
+      - ./conf/registry:/etc/docker/registry:ro
+      - ./registry:/usr/local/docker/registry
+    networks:
+      - registry-net
+    restart: always
+
+networks:
+  registry-net:
