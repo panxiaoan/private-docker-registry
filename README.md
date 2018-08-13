@@ -8,21 +8,21 @@
 
 ### Step.1 下载镜像
 
-```shell
+``` shell
 docker pull registry:2.6.2
 docker pull hyper/docker-registry-web
 ```
 
 ### Step.2 创建验证文件
 
-```
+``` shell
 cd ../private-docker-registry
 ./generate-keys.sh
 ```
 
 ### Step.3 创建、下载、运行容器
 
-```
+``` shell
 cd ../private-docker-registry
 docker-compose up -d
 ```
