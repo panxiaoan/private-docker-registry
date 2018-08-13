@@ -18,10 +18,11 @@
 docker pull registry:2.6.2
 docker pull hyper/docker-registry-web
 
-# 创建一些目录
+# 创建镜像存放目录
 mkdir -p /usr/local/docker/registry
-mkdir -p /usr/local/docker/registry-auth
-mkdir -p /usr/local/docker/registry-data
+
+# 创建 Registry Web DB 存放目录
+mkdir -p /usr/local/docker/registry-db
 
 # 克隆 private-docker-registry 项目
 cd /usr/local/docker

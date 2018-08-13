@@ -5,4 +5,4 @@ registry:
    auth:
      enabled: true
      key: /conf/auth.key
-     issuer: test   
+     issuer: test
