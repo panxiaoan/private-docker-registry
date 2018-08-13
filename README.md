@@ -58,4 +58,21 @@ docker rmi localhost:5000/hello-world:v1.0.0
 docker run localhost:5000/hello-world:v1.0.0 
 ```
 
+**注意事项**
+
+- 当远程访问时，这个例子没有配置反向代理，所以需要修改客户端的 Docker 配置
+
+``` shell
+vim /usr/lib/systemd/system/docker.service
+
+# 加入这一段：--insecure-registry 192.168.246.146:5000
+ExecStart=/usr/bin/dockerd --insecure-registry 192.168.246.146:5000
+
+# 生效和重启 Docker
+systemctl daemon-reload
+systemctl restart docker
+```
+
+- 另外在两个 config.yml 文件中的 URL 地址请 Docker Registry 宿主机 IP 或者域名
+
 

@@ -8,8 +8,8 @@ http:
   addr: 0.0.0.0:5000
 auth:
   token:
-    realm: http://registry-web:5001/api/auth
-    service: registry:5000
+    realm: http://192.168.246.146:5001/api/auth
+    service: 192.168.246.146:5000
     issuer: test
     rootcertbundle: /etc/docker/registry/auth.cert
 log:
@@ -17,7 +17,7 @@ log:
 notifications:
   endpoints:
     - name: listener
-      url: http://registry-web:5001/api/notification
+      url: http://192.168.246.146:5001/api/notification
       timeout: 5s
       threshold: 3
       backoff: 2ss

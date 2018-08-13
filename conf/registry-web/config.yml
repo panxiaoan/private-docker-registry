@@ -1,6 +1,6 @@
 registry:
-   url: http://registry:5000/v2
-   name: localhost:5000
+   url: http://192.168.246.146:5000/v2
+   name: 192.168.246.146:5000
    readonly: false
    auth:
      enabled: true
