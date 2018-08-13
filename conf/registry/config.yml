@@ -1,0 +1,23 @@
+version: 0.1
+storage:
+  filesystem:
+    rootdirectory: /registry
+  delete:
+    enabled: true   
+http:
+  addr: 0.0.0.0:5000
+auth:
+  token:
+    realm: http://localhost:5001/api/auth
+    service: localhost:5000
+    issuer: test
+    rootcertbundle: /etc/docker/registry/auth.cert
+log:
+  level: info 
+notifications:
+  endpoints:
+    - name: listener
+      url: http://registry-web:5001/api/notification
+      timeout: 500ms
+      threshold: 5
+      backoff: 1s
