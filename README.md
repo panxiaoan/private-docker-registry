@@ -6,7 +6,7 @@
 
 ## 使用方法
 
-### Step.1 准备
+**准备**
 
 ``` shell
 
@@ -25,16 +25,36 @@ git clone https://github.com/panxiaoan/private-docker-registry.git
 
 ```
 
-### Step.2 创建验证文件
+**创建验证文件**
 
 ``` shell
 cd ../private-docker-registry
 ./generate-keys.sh
 ```
 
-### Step.3 创建、下载、运行容器
+**创建、下载、运行容器**
 
 ``` shell
 cd ../private-docker-registry
 docker-compose up -d
 ```
+
+**使用**
+- http://localhost:5001
+- 默认账号密码：admin / admin
+- 登录后，请给 admin 添加全部角色
+
+**测试**
+
+``` shell
+# 此处登录的是 Registry
+docker login localhost:5000
+docker pull hello-world
+docker tag hello-world localhost:5001/hello-world:v1.0.0
+docker push localhost:5001/hello-world:v1.0.0
+
+docker rmi localhost:5000/hello-world:v1.0.0
+docker run localhost:5000/hello-world:v1.0.0 
+```
+
+
