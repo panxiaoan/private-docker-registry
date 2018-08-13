@@ -73,6 +73,6 @@ systemctl daemon-reload
 systemctl restart docker
 ```
 
-- 另外在两个 config.yml 文件中的 URL 地址请 Docker Registry 宿主机 IP 或者域名
+- 另外在两个 config.yml 文件中的 URL 地址请写宿主机 IP 或者域名
 
 
