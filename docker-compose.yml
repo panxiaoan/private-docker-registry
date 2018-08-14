@@ -6,7 +6,7 @@ services:
       - 5001:8080
     volumes:
        - ./conf/registry-web:/conf:ro
-       - /usr/local/docker/registry-db:/data
+       - /opt/docker/registry-db:/data
     networks:
       - registry-net
     depends_on:
@@ -18,7 +18,7 @@ services:
       - 5000:5000
     volumes:
       - ./conf/registry:/etc/docker/registry:ro
-      - /usr/local/docker/registry:/registry
+      - /opt/docker/registry:/registry
     networks:
       - registry-net
     restart: always
