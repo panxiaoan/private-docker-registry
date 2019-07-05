@@ -56,8 +56,8 @@ docker-compose up -d
 # 此处登录的是 Registry
 docker login localhost:5000
 docker pull hello-world
-docker tag hello-world localhost:5001/hello-world:v1.0.0
-docker push localhost:5001/hello-world:v1.0.0
+docker tag hello-world localhost:5000/hello-world:v1.0.0
+docker push localhost:5000/hello-world:v1.0.0
 
 docker rmi localhost:5000/hello-world:v1.0.0
 docker run localhost:5000/hello-world:v1.0.0 
