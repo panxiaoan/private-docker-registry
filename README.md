@@ -28,6 +28,10 @@ mkdir -p /opt/docker/registry-db
 cd /opt/docker
 git clone https://github.com/panxiaoan/private-docker-registry.git
 
+# 修改镜像配置文件中的 IP 地址
+vim private-docker-registry/conf/registry/config.yml
+vim private-docker-registry/conf/registry-web/config.yml
+
 ```
 
 **创建验证文件**
