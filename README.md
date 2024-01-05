@@ -95,6 +95,8 @@ systemctl start docker
 **在 Registry Web 中批量删除历史镜像**
 * 打开 postman 导入文件 `postman/Docker Registry Web.postman_collection.json`
 * 修改 Registry WEB 的 URL 和登录账号
-    ![Alt text](./assets/registry-web-1.png)
+
+    ![Alt text](https://github.com/panxiaoan/private-docker-registry/blob/master/assets/registry-web-1.png)
 * 修改测试脚本中需删除的：镜像名称、最大和最小标签数
-    ![Alt text](./assets/registry-web-2.png)
+
+    ![Alt text](https://github.com/panxiaoan/private-docker-registry/blob/master/assets/registry-web-2.png)
