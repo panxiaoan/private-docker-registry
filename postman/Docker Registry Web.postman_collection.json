@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "5d652285-98c7-45ac-887b-aa6ecb731711",
+		"name": "Docker Registry Web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1414570"
+	},
+	"item": [
+		{
+			"name": "批量删除历史镜像",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var repoName = \"hello-world\";\r",
+							"\r",
+							"var maxTag = 6;\r",
+							"var minTag = 1;\r",
+							"\r",
+							"var url = `http://localhost:5001/repo/delete/${repoName}/`;\r",
+							"\r",
+							"for (var tmpTag = minTag; tmpTag <= maxTag; tmpTag++) {\r",
+							"    var tmpUrl = url + `${tmpTag}`;\r",
+							"    console.info(tmpUrl);\r",
+							"    pm.sendRequest(tmpUrl);\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "spring-security-redirect",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "j_username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "j_password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/j_spring_security_check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"j_spring_security_check"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

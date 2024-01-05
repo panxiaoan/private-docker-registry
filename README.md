@@ -14,8 +14,10 @@
 
 ``` shell
 
-# 下载镜像
+# 下载 Docker 官方仓库服务镜像
 docker pull registry:2.6.2
+
+# 下载仓库服务 Web UI 镜像
 docker pull hyper/docker-registry-web
 
 # 创建镜像存放目录
@@ -49,8 +51,8 @@ docker-compose up -d
 ```
 
 **使用**
-- Docker Registry: localhost:5000
-- Docker Registry Web UI: http://localhost:5001
+- Registry URL: localhost:5000
+- Registry Web UI URL: http://localhost:5001
 - 默认账号密码：admin / admin
 - 登录 Registry Web 后，请给 admin 添加 **write-all** 角色，才能拉取和推送镜像
 
@@ -86,10 +88,13 @@ systemctl daemon-reload
 systemctl start docker
 ```
 
-- 另外在两个 config.yml 文件中的 URL 地址请写宿主机 IP 或者域名
+- 如果在测试或生产环境部署，则需要在 `conf/registry` 和 `conf/registry-web` 目录中，将 `config.yml` 文件中的 URL 修改为宿主机 IP 或者域名
 
-**Registry Web UI**
+## Registry Web
 
-<img src="https://github.com/panxiaoan/private-docker-registry/blob/master/assets/ui.png" width="600" height="350" alt="web ui"/>
-
-
+**在 Registry Web 中批量删除历史镜像**
+* 打开 postman 导入文件 `postman/Docker Registry Web.postman_collection.json`
+* 修改 Registry WEB 的 URL 和登录账号
+    ![Alt text](./assets/registry-web-1.png)
+* 修改测试脚本中需删除的：镜像名称、最大和最小标签数
+    ![Alt text](./assets/registry-web-2.png)
